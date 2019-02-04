@@ -1,0 +1,47 @@
+{
+  "name": "bnomei/kirby3-instagram",
+  "type": "plugin",
+  "version": "1.0.0",
+  "description": "Kirby 3 Plugin to call Instagram API Endpoints",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Bruno Meilick",
+          "email": "b@bnomei.com"
+      }
+  ],
+  "keywords": [
+      "kirby3",
+      "kirby3-cms",
+      "kirby3-plugin",
+      "instagram",
+      "api",
+      "token",
+      "get",
+      "images",
+      "endpoints",
+      "endpoint"
+  ],
+  "autoload": {
+      "psr-4": {
+          "Bnomei\\": "classes/"
+      }
+  },
+  "config": {
+      "optimize-autoloader": true,
+      "sort-packages": true
+  },
+  "require": {
+      "php": ">=7.1.0",
+      "getkirby/composer-installer": "^1.1"
+  },
+  "scripts": {
+      "zip": [
+          "touch kirby3-instagram.zip",
+          "rm kirby3-instagram.zip",
+          "composer install --no-dev",
+          "composer dumpautoload -o",
+          "zip -r kirby3-instagram.zip . -x *.git*"
+      ]
+  }
+}
