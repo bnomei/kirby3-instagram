@@ -1,7 +1,7 @@
 {
   "name": "bnomei/kirby3-instagram",
   "type": "kirby-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kirby 3 Plugin to call Instagram API Endpoints",
   "license": "MIT",
   "authors": [
@@ -35,14 +35,5 @@
   "require": {
       "php": ">=7.1.0",
       "getkirby/composer-installer": "^1.1"
-  },
-  "scripts": {
-      "zip": [
-          "touch kirby3-instagram.zip",
-          "rm kirby3-instagram.zip",
-          "composer install --no-dev",
-          "composer dumpautoload -o",
-          "zip -r kirby3-instagram.zip . -x *.git*"
-      ]
   }
 }

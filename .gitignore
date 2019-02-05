@@ -1,8 +1,6 @@
 # OS files
 .DS_Store
 
-kirby3-instagram.zip
-
 # files of Composer dependencies that are not needed for the plugin
 /vendor/**/.*
 /vendor/**/*.json

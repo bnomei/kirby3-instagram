@@ -13,9 +13,9 @@ This plugin is free but if you use it in a commercial project please consider to
 
 ## Installation
 
-- for devkit-setup use `composer require bnomei/kirby3-instagram` or
+- unzip [master.zip](https://github.com/bnomei/kirby3-instagram/archive/master.zip) as folder `site/plugins/kirby3-instagram` or
 - `git submodule add https://github.com/bnomei/kirby3-instagram.git site/plugins/kirby3-instagram` or
-- extract latest release of [kirby3-instagram.zip](https://github.com/bnomei/kirby3-instagram/releases/download/v1.0.1/kirby3-instagram.zip) as folder `site/plugins/kirby3-instagram`
+- `composer require bnomei/kirby3-instagram`
 
 ## Usage
 

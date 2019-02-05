@@ -9,7 +9,7 @@ class ComposerStaticInitdaaa9d91477643e09e6f0e24cfba50bc
     public static $prefixLengthsPsr4 = array (
         'K' => 
         array (
-            'Kirby\\ComposerInstaller\\' => 24,
+            'Kirby\\' => 6,
         ),
         'B' => 
         array (
@@ -18,7 +18,7 @@ class ComposerStaticInitdaaa9d91477643e09e6f0e24cfba50bc
     );
 
     public static $prefixDirsPsr4 = array (
-        'Kirby\\ComposerInstaller\\' => 
+        'Kirby\\' => 
         array (
             0 => __DIR__ . '/..' . '/getkirby/composer-installer/src',
         ),
@@ -30,9 +30,9 @@ class ComposerStaticInitdaaa9d91477643e09e6f0e24cfba50bc
 
     public static $classMap = array (
         'Bnomei\\Instagram' => __DIR__ . '/../..' . '/classes/Instagram.php',
-        'Kirby\\ComposerInstaller\\CmsInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/CmsInstaller.php',
-        'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/Plugin.php',
-        'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/PluginInstaller.php',
+        'Kirby\\ComposerInstaller\\CmsInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/CmsInstaller.php',
+        'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
+        'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

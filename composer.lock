@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cd9a45a39ccf92e6364f1d7ec32796d",
+    "content-hash": "a27423ee89ca82c404b1303b9190d8d6",
     "packages": [
         {
             "name": "getkirby/composer-installer",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/composer-installer.git",
-                "reference": "8736a4209317d0c2c0fd7796b35cfdde4aae194d"
+                "reference": "fb23e7ba585ac6e0ffa9a6582bbbadc1be3d57b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/8736a4209317d0c2c0fd7796b35cfdde4aae194d",
-                "reference": "8736a4209317d0c2c0fd7796b35cfdde4aae194d",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/fb23e7ba585ac6e0ffa9a6582bbbadc1be3d57b8",
+                "reference": "fb23e7ba585ac6e0ffa9a6582bbbadc1be3d57b8",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Kirby\\ComposerInstaller\\": "src/"
+                    "Kirby\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -42,7 +42,7 @@
             ],
             "description": "Kirby's custom Composer installer for the Kirby CMS and for Kirby plugins",
             "homepage": "https://getkirby.com",
-            "time": "2019-02-04T19:43:22+00:00"
+            "time": "2019-02-05T08:41:05+00:00"
         }
     ],
     "packages-dev": [],
