@@ -36,9 +36,10 @@ class Instagram
             $data = json_decode($data, true);
             if(array_key_exists('data', $data)) {
                 $data = $data['data'];
+            } else {
+                $data = [];
             }
         } else {
-            // TODO: debug log?
             $data = [];
         }
         return $data;
