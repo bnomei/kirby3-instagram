@@ -61,7 +61,7 @@ class Instagram
             $params = option('bnomei.instagram.params');
         }
 
-        if ($force == null && option('debug') && option('bnomei.feed.debugforce')) {
+        if ($force == null && option('debug') && option('bnomei.instagram.debugforce')) {
             $force = true;
         }
 

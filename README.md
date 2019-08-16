@@ -19,20 +19,39 @@ This plugin is free but if you use it in a commercial project please consider to
 
 ## Usage
 
+### Config
+
+You can set the token in the config.
+
+```php
+return [
+    // other config settings ...
+    'bnomei.instagram.token' => 'YOUR-TOKEN-HERE',
+];
+```
+
+### Template
+
 ```php
 <?php
-    $token = 'your.token';
+    $token = null; // default. this will cause loading from the config file or set it here...
+    $token = 'YOUR-TOKEN-HERE';
     $endpoint = 'users/self/media/recent';
     $params = [
         'count' => 4
     ];
-    $force = false;
+    $force = null; // default. this will cause refresh on global debug == true
+    // $force = true; // always force refresh
     foreach(site()->instagram($token, $endpoint, $params, $force) as $data) {
         echo Kirby\Toolkit\Html::img(
             $data['images']['standard_resolution']['url']
         );
     }
 ```
+
+## Cache
+
+This plugin does have a cache unless global `debug` options is set or your `$force` the refresh because the instagram api will stop working if you push to may requests in a period of short time.
 
 > TIP: all `site()->instagram()` function parameters are optional if their value is set in config.
 
