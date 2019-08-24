@@ -2,11 +2,14 @@
 
 namespace Bnomei;
 
+use Kirby\Cache\Cache;
+use Kirby\Http\Remote;
+
 class Instagram
 {
     private static $indexname = null;
     private static $cache = null;
-    private static function cache(): \Kirby\Cache\Cache
+    private static function cache(): Cache
     {
         if (!static::$cache) {
             static::$cache = kirby()->cache('bnomei.instagram');
@@ -31,10 +34,10 @@ class Instagram
 
     public static function api(string $url): ?array
     {
-        $data = \Kirby\Http\Remote::get($url, ['method' => 'GET'])->content();
+        $data = Remote::get($url, ['method' => 'GET'])->content();
         if ($data && static::isJSON($data)) {
             $data = json_decode($data, true);
-            if(array_key_exists('data', $data)) {
+            if (array_key_exists('data', $data)) {
                 $data = $data['data'];
             } else {
                 $data = [];
@@ -69,7 +72,7 @@ class Instagram
         $data = $force ? null : static::cache()->get($key);
         if (!$data) {
             $url  = [
-                rtrim(trim(option('bnomei.instagram.api')),'/').'/',
+                rtrim(trim(option('bnomei.instagram.api')), '/').'/',
                 $endpoint,
                 "?access_token=".$token
             ];
