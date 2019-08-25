@@ -26,12 +26,11 @@ This plugin is free but if you use it in a commercial project please consider to
 - `git submodule add https://github.com/bnomei/kirby3-instagram.git site/plugins/kirby3-instagram` or
 - `composer require bnomei/kirby3-instagram`
 
-## Usage
-
-### Config
+## Setup
 
 You can set the token in the config.
 
+*site/config/config.php**
 ```php
 return [
     // other config settings ...
@@ -39,11 +38,23 @@ return [
 ];
 ```
 
-### Template
+You can also set a callback if you use the [dotenv Plugin](https://github.com/bnomei/kirby3-dotenv)
 
+*site/config/config.php**
+```php
+return [
+    // other config settings ...
+    'bnomei.instagram.token' => function() { return env('INSTAGRAM_TOKEN'); },
+];
+```
+
+## Usage
+
+**site/templates/default.php**
 ```php
 <?php
-    $token = null; // default. this will cause loading from the config file or set it here...
+    // default. this will cause loading from the config file or set it here...
+    $token = null; 
     $token = 'YOUR-TOKEN-HERE';
     $endpoint = 'users/self/media/recent';
     $params = [
@@ -66,23 +77,14 @@ This plugin does have a cache unless global `debug` options is set or your `$for
 
 ## Settings
 
-**debugforce**
-- default: `true` will only write but never read cache in debug mode
-
-**expire**
-- default: `60*24` in minutes. `0` will never expire (aka forever).
-
-**token**
-- default: `null` you could add a default token
-
-**api**
-- default: `https://api.instagram.com/v1`
-
-**endpoint**
-- default: `users/self/media/recent` you could change default endpoint
-
-**params**
-- default: `[]` you could change default params for api
+| bnomei.instagram.         | Default        | Description               |            
+|---------------------------|----------------|---------------------------|
+| debugforce | `true` | will only write but never read cache in debug mode |
+| expire | `60*24` | in minutes. `0` will never expire (aka forever). |
+| token | `null` | you could add a default token |
+| api | `https://api.instagram.com/v1` | |
+| endpoint | `users/self/media/recent` | you could change default endpoint |
+| params | `[]` | you could change default params for api |
 
 ## Disclaimer
 
