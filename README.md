@@ -69,11 +69,11 @@ return [
     }
 ```
 
+> TIP: all `site()->instagram()` function parameters are optional if their value is set in config.
+
 ## Cache
 
 This plugin does have a cache unless global `debug` options is set or your `$force` the refresh because the instagram api will stop working if you push to may requests in a period of short time.
-
-> TIP: all `site()->instagram()` function parameters are optional if their value is set in config.
 
 ## Settings
 
