@@ -53,6 +53,9 @@ class Instagram
         if (!$token) {
             $token = option('bnomei.instagram.token');
         }
+        if (is_callable($token)) {
+            $token = $token();
+        }
         $token = trim($token);
 
         if (!$endpoint) {
