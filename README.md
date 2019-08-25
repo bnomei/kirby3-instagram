@@ -30,7 +30,7 @@ This plugin is free but if you use it in a commercial project please consider to
 
 You can set the token in the config.
 
-*site/config/config.php**
+**site/config/config.php**
 ```php
 return [
     // other config settings ...
@@ -38,9 +38,9 @@ return [
 ];
 ```
 
-You can also set a callback if you use the [dotenv Plugin](https://github.com/bnomei/kirby3-dotenv)
+You can also set a callback if you use the [dotenv Plugin](https://github.com/bnomei/kirby3-dotenv).
 
-*site/config/config.php**
+**site/config/config.php**
 ```php
 return [
     // other config settings ...
