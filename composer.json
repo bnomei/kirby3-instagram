@@ -1,7 +1,7 @@
 {
   "name": "bnomei/kirby3-instagram",
   "type": "kirby-plugin",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Kirby 3 Plugin to call Instagram API Endpoints",
   "license": "MIT",
   "authors": [
@@ -21,7 +21,10 @@
     "get",
     "images",
     "endpoints",
-    "endpoint"
+    "endpoint",
+    "param",
+    "any",
+    "generic"
   ],
   "autoload": {
     "psr-4": {
@@ -59,6 +62,7 @@
     "kirby-cms-path": "tests/kirby"
   },
   "suggest": {
-    "bnomei/kirby3-janitor": "Use a Panel Button or PHP code to clear the cache"
+    "bnomei/kirby3-janitor": "Use a Panel Button or PHP code to clear the cache",
+    "bnomei/kirby3-dotenv": "To load the token from an .env file"
   }
 }

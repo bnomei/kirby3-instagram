@@ -11,12 +11,15 @@
 [![Twitter](https://flat.badgen.net/badge/twitter/bnomei?color=66d9ef)](https://twitter.com/bnomei)
 
 
-Kirby 3 Plugin to call Instagram API Endpoints
+Kirby 3 Plugin to call Instagram (or any other) API Endpoints
+
+1. [Instagram](https://github.com/bnomei/kirby3-instagram#instagram)
+2. [Any API](https://github.com/bnomei/kirby3-instagram#any-api)
 
 ## Commercial Usage
 
 This plugin is free but if you use it in a commercial project please consider to 
-- [make a donation 🍻](https://www.paypal.me/bnomei/3) or
+- [make a donation 🍻](https://www.paypal.me/bnomei/5) or
 - [buy me ☕](https://buymeacoff.ee/bnomei) or
 - [buy a Kirby license using this affiliate link](https://a.paddle.com/v2/click/1129/35731?link=1170)
 
@@ -50,6 +53,8 @@ return [
 
 ## Usage
 
+#### Instagram
+
 **site/templates/default.php**
 ```php
 <?php
@@ -71,6 +76,23 @@ return [
 
 > TIP: all `site()->instagram()` function parameters are optional if their value is set in config.
 
+#### Any API
+
+Since you can configure the `api`-url, `endpoint` and `json-root` data element you could actually query any API you want not just Instagram.
+
+```php
+$inst = new Bnomei\Instagram([
+    'token' => null,
+    'api' => 'https://repo.packagist.org/',
+    'endpoint' => 'p/bnomei/kirby3-instagram.json',
+    'json-root' => 'packages',
+]);
+$data = $inst->api()['bnomei/kirby3-instagram']['1.2.0']['authors'][0]['name'];
+// Bruno Meilick
+```
+
+> TIP: since the `params` can be a callback you can forward any data you want and again even from an .env file. Go wild!
+
 ## Cache
 
 This plugin does have a cache unless global `debug` options is set or your `$force` the refresh because the instagram api will stop working if you push to may requests in a short period of time.
@@ -79,12 +101,14 @@ This plugin does have a cache unless global `debug` options is set or your `$for
 
 | bnomei.instagram.         | Default        | Description               |            
 |---------------------------|----------------|---------------------------|
-| debugforce | `true` | will only write but never read cache in debug mode |
 | expire | `60*24` | in minutes. `0` will never expire (aka forever). |
 | token | `null` | you could add a default token |
 | api | `https://api.instagram.com/v1` | |
 | endpoint | `users/self/media/recent` | you could change default endpoint |
 | params | `[]` | you could change default params for api |
+| json-root | `data` | node to unwrap in json response |
+
+> TIP: All setting params could be callbacks. Example see [Setup with DotEnv](https://github.com/bnomei/kirby3-instagram#setup).
 
 ## Disclaimer
 
