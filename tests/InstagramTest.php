@@ -91,14 +91,19 @@ final class InstagramTest extends TestCase
 
     public function testApi()
     {
-        $inst = new Instagram();
-        $key = 'TOKEN'.$inst->option('endpoint');
+        $inst = new Instagram([
+            'token' => null,
+            'api' => 'https://repo.packagist.org/',
+            'endpoint' => 'p/bnomei/kirby3-instagram.json',
+            'json-root' => 'packages',
+        ]);
+        $key = $inst->option('token').$inst->option('endpoint');
 
         $id = $inst->cacheId($key);
-        $this->assertRegExp('/^2178974503-\d-\d-\d-NONE$/', $id);
+        $this->assertRegExp('/^1601707070-\d-\d-\d-NONE$/', $id);
 
-        $this->assertCount(0, $inst->api('TOKEN'));
-        $this->assertCount(0, $inst->api('TOKEN'));
+        $this->assertCount(1, $inst->api());
+        $this->assertCount(1, $inst->api());
         $this->assertIsArray($inst->read($key));
     }
 
