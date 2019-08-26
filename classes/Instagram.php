@@ -33,7 +33,7 @@ final class Instagram
         $this->options = array_merge($defaults, $options);
 
         foreach ($this->options as $key => $call) {
-            if (is_callable($call) && in_array($key, ['expires', 'token', 'api', 'endpoint', 'params'])) {
+            if (is_callable($call) && in_array($key, ['expires', 'token', 'api', 'endpoint', 'params', 'json-root'])) {
                 $this->options[$key] = $call();
             }
         }
